@@ -4,7 +4,7 @@
 <head>
 	<!--viewport-fit=cover:Fill the whole screen on iPhone X-->
 	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-	<title>(っ °Д °;)っ</title>
+	<title>Phigros Simulator</title>
 	<link rel="manifest" href="./manifest.json">
 	<link rel="stylesheet" href="/utils/style.css">
 	<link rel="stylesheet" href="style.css?v=142237">
@@ -27,26 +27,26 @@
 </head>
 
 <body>
-	<noscript><strong style="color:#f00">此浏览器不支持JavaScript，该脚本无法运行。</strong></noscript>
+	<noscript><strong style="color:#f00">JavaScriptがサポートされていません。このスクリプトは実行できません。</strong></noscript>
 	<div class="index">
 		<div class="main">
 			<h1 class="title"></h1>
 			<p class="info"></p>
-			<p class="profile">上传<a id="qwq">谱面和资源文件</a>或将其打包成zip然后上传；<br>读取完成后调节相关参数，最后点击“播放”按钮。<br>播放时双击画面：左上角暂停；右上角重新开始；右下角全屏。</p>
+			<p class="profile"><a id="qwq">譜面やリソースファイルをアップロード</a>してください。または、それらをzipファイルにまとめてアップロードしてください。関連するパラメーターを調整し、最後に「再生」ボタンをクリックします。<br>再生中に画面をダブルクリックすると、左上隅が一時停止、右上隅が再開、右下隅が全画面表示になります。</p>
 			<div id="uploader" class="disabled">
-				<input type="button" id="uploader-upload" value="上传">
+				<input type="button" id="uploader-upload" value="アップロード">
 				<div id="uploader-select">
-					<label id="uploader-file">上传文件</label>
-					<label id="uploader-dir">上传文件夹</label>
+					<label id="uploader-file">ファイルをアップロード</label>
+					<label id="uploader-dir">フォルダをアップロード</label>
 				</div>
 			</div>
-			<input type="button" value="重置" onclick="location.reload(true)">
-			<input type="button" id="btn-more" value="更多设置">
+			<input type="button" value="リセット" onclick="location.reload(true)">
+			<input type="button" id="btn-more" value="詳細設定">
 			<div id="select" class="disabled">
-				<div>谱面：<select id="select-chart" style="width:6em"></select></div>
-				<div>音乐：<select id="select-bgm" style="width:6em"></select></div>
-				<div>图片：<select id="select-bg" style="width:6em"></select></div><br>
-				<div>宽高比：<select id="select-aspect-ratio" style="width:4em">
+				<div>譜面：<select id="select-chart" style="width:6em"></select></div>
+				<div>楽曲：<select id="select-bgm" style="width:6em"></select></div>
+				<div>背景：<select id="select-bg" style="width:6em"></select></div><br>
+				<div>アスペクト比：<select id="select-aspect-ratio" style="width:4em">
 						<option value="1.25">5:4</option>
 						<option value="1.333333">4:3</option>
 						<option value="1.4316546762589928">10:7</option>
@@ -57,55 +57,55 @@
 						<option value="1.777778" selected>16:9</option>
 					</select>
 				</div>
-				<div>按键缩放：<select id="select-note-scale" style="width:4em">
-						<option value="0.8">极小</option>
-						<option value="0.9">较小</option>
-						<option value="1" selected>默认</option>
-						<option value="1.15">较大</option>
-						<option value="1.3">极大</option>
-					</select>
-				</div>
-				<div>背景变暗：<select id="select-background-dim" style="width:4em">
-						<option value="1">黑暗</option>
-						<option value="0.8">昏暗</option>
-						<option value="0.6" selected>默认</option>
-						<option value="0.4">较亮</option>
-						<option value="0.2">明亮</option>
-					</select>
-				</div><br>
-				<div>曲名：<input id="input-name" class="input" style="width:7em" placeholder="&#60; Untitled &#62;"></div>
-				<div>曲师：<input id="input-artist" class="input" style="width:7em" placeholder="&#60; nameless &#62;"></div><br>
-				<div>曲绘：<input id="input-illustrator" class="input" style="width:7em" placeholder="&#60; nameless &#62;"></div>
-				<div>谱师：<input id="input-charter" class="input" style="width:7em" placeholder="&#60; nameless &#62;"></div><br>
-				<div>难度：<select id="select-difficulty" style="width:3em">
-						<option value="" selected>SP</option>
-						<option value="EZ">EZ</option>
-						<option value="HD">HD</option>
-						<option value="IN">IN</option>
-						<option value="AT">AT</option>
-					</select>
-				</div>
-				<div>等级：<select id="select-level" style="width:3em">
-						<option value="" selected>?</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-						<option value="9">9</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-						<option value="13">13</option>
-						<option value="14">14</option>
-						<option value="15">15</option>
-						<option value="16">16</option>
-					</select>
-				</div>
-				<div>音效音量：<select id="select-volume" style="width:5em">
+				<div>キーボード拡大縮小：<select id="select-note-scale" style="width:4em">
+					<option value="0.8">極小</option>
+					<option value="0.9">やや小さい</option>
+					<option value="1" selected>デフォルト</option>
+					<option value="1.15">やや大きい</option>
+					<option value="1.3">非常に大きい</option>
+				</select>
+			</div>
+			<div>背景を暗くする：<select id="select-background-dim" style="width:4em">
+					<option value="1">暗い</option>
+					<option value="0.8">薄暗い</option>
+					<option value="0.6" selected>デフォルト</option>
+					<option value="0.4">明るめ</option>
+					<option value="0.2">明るい</option>
+				</select>
+			</div><br>
+			<div>曲名：<input id="input-name" class="input" style="width:7em" placeholder="&#60;Untitled&#62;"></div>
+			<div>作曲者：<input id="input-artist" class="input" style="width:7em" placeholder="&#60;名前なし&#62;"></div><br>
+			<div>絵師：<input id="input-illustrator" class="input" style="width:7em" placeholder="&#60;名前なし&#62;"></div>
+			<div>譜面作成者：<input id="input-charter" class="input" style="width:7em" placeholder="&#60;名前なし&#62;"></div><br>
+			<div>難易度：<select id="select-difficulty" style="width:3em">
+					<option value="" selected>SP</option>
+					<option value="EZ">EZ</option>
+					<option value="HD">HD</option>
+					<option value="IN">IN</option>
+					<option value="AT">AT</option>
+				</select>
+			</div>
+			<div>レベル：<select id="select-level" style="width:3em">
+					<option value="" selected>？</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+				</select>
+			</div>
+			<div>効果音の音量：<select id="select-volume" style="width:5em">
 						<option value="0">0%</option>
 						<option value="0.25">25%</option>
 						<option value="0.5">50%</option>
@@ -114,34 +114,34 @@
 						<option value="5">500%</option>
 					</select>
 				</div><br>
-				<div><input type="checkbox" id="feedback" checked><label for="feedback">触摸反馈</label></div>
-				<div><input type="checkbox" id="imageBlur" checked><label for="imageBlur">背景模糊</label></div>
-				<div><input type="checkbox" id="highLight" checked><label for="highLight">多押高亮</label></div><br>
-				<div><input type="checkbox" id="lineColor" checked><label for="lineColor">FC/AP指示器</label></div>
+				<div><input type="checkbox" id="feedback" checked><label for="feedback">タップ表示</label></div>
+				<div><input type="checkbox" id="imageBlur" checked><label for="imageBlur">背景ブラー</label></div>
+				<div><input type="checkbox" id="highLight" checked><label for="highLight">同時押し表示</label></div><br>
+				<div><input type="checkbox" id="lineColor" checked><label for="lineColor">FC/AP表示</label></div>
 				<div class="disabled-when-playing"><input type="checkbox" id="autoplay" checked><label for="autoplay">自动演示</label></div>
 				<div class="disabled-when-playing"><input type="checkbox" id="showTransition" checked><label for="showTransition">过渡动画</label></div><br>
-				<div class="">谱面镜像：<select id="select-flip" style="width:4em">
-						<option value="0" selected>无</option>
-						<option value="1">X轴</option>
-						<option value="2">Y轴</option>
-						<option value="3">X&Y</option>
+				<div class="">ミラー：<select id="select-flip" style="width:4em">
+						<option value="0" selected>無</option>
+						<option value="1">X軸</option>
+						<option value="2">Y軸</option>
+						<option value="3">原点</option>
 					</select>
 				</div>
-				<div class="disabled-when-playing">音乐变速：<select id="select-speed" style="width:4em">
-						<option value="Slowest">极慢</option>
-						<option value="Slower">较慢</option>
-						<option value="" selected>正常</option>
-						<option value="Faster">较快</option>
-						<option value="Fastest">极快</option>
+				<div class="disabled-when-playing">楽曲速度：<select id="select-speed" style="width:4em">
+						<option value="Slowest">最遅</option>
+						<option value="Slower">遅め</option>
+						<option value="" selected>デフォルト</option>
+						<option value="Faster">速め</option>
+						<option value="Fastest">最速</option>
 					</select>
 				</div><br>
-				<div class="disabled-when-playing">谱面延时(ms)：<input id="input-offset" type="number" step="5" class="input" style="width:4em" placeholder="0"></div>
+				<div class="disabled-when-playing">判定調節(ms)：<input id="input-offset" type="number" step="5" class="input" style="width:4em" placeholder="0"></div>
 				<div>
-					<input type="button" id="btn-play" value="播放">
-					<input type="button" id="btn-pause" value="暂停">
+					<input type="button" id="btn-play" value="遊ぶ">
+					<input type="button" id="btn-pause" value="停止">
 				</div>
 			</div>
-			<div><strong id="msg-out">初始化...</strong></div>
+			<div><strong id="msg-out">初期化中...</strong></div>
 			<div id="stage">
 				<i class="tl">&#xe900;</i><i class="tr">&#xe902;</i><i class="bl">&#xe909;</i><i class="br">&#xe904;</i>
 				<div id="mask">
@@ -151,9 +151,9 @@
 			<div id="cover-dark" class="cover-dark fade"></div>
 			<div id="cover-view" class="cover-view fade" qwq>
 				<div id="view-nav" class="view-nav">
-					<a id="nav-use">模拟器使用说明</a>
-					<a id="nav-cfg">更多设置</a>
-					<a id="nav-msg">信息</a>
+					<a id="nav-use">シミュレーターの説明</a>
+					<a id="nav-cfg">詳細設定</a>
+					<a id="nav-msg">情報</a>
 				</div>
 				<div id="view-content" class="view-content">
 					<iframe id="view-doc" frameborder="0"></iframe>
